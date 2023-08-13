@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <!-- HTML Meta Tags -->
+  <title>CAH Maker</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Generate Cards Against Humanity cards for personal use." />
+  <meta name="canonical" href="https://tylergordonhill.com/cah-maker" />
+  <meta name="theme-color" content="#128A74" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="CAH Maker" />
+  <meta property="og:description"
+    content="Generate Cards Against Humanity cards for personal use." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tylergordonhill.com/cah-maker" />
+  <meta property="og:image" content="<>" />
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt"
+    content="<>">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:domain" content="tylergordonhill.com" />
+
+  <!-- Link Tags -->
+  <link rel="icon" href="<>" />
+  <link href="https://tylergordonhill.com/global.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h2 id="title">CAH Maker</h2>
+    <a id="byLine" href="/">Tyler Gordon Hill</a>
+  </header>
+  <main>
+    <div id="cards">
+      <div>
+        <div class="card">
+          <img width="261.12" height="355.2" src="/images/white-back.svg" alt="White Back" />
+        </div>
+        <a href="/images/white-back.svg" download="" class="button big">Download</a>
+      </div>
+      <div>
+        <div class="card">
+          <img width="261.12" height="355.2" src="/images/black-back.svg" alt="Black Back" />
+        </div>
+        <a href="/images/black-back.svg" download="" class="button big">Download</a>
+      </div>
+      <div id="white-front">
+        <div class="card"></div>
+        <input type="text" value="Waiting until she's" placeholder="Line 1" class="big">
+        <input type="text" value="asleep" placeholder="Line 2" class="big">
+        <button class="big addLine">Add line</button>
+        <a href="/images/white-front.svg" download="" class="button big">Download</a>
+      </div>
+      <div id="black-front">
+        <div class="card"></div>
+        <input type="text" value="You're either" placeholder="Line 1" class="big">
+        <input type="text" value="queer, or you're" placeholder="Line 2" class="big">
+        <input type="text" value="______" placeholder="Line 3" class="big">
+        <button class="big addLine">Add line</button>
+        <a href="/images/black-front.svg" download="" class="button big">Download</a>
+      </div>
+    </div>
+    <div id="instructions">
+      <h3>Instructions</h3>
+      <ol>
+        <li>Design and download all of the faces of the cards you will be ordering here. These are made accrording to the template provided by makeplayingcards.com <a href="https://www.makeplayingcards.com/template/customer/builder/uploadfile/template/playingcard/playingcard.html?unitNo=C380050185D1C1AF&pieces=55">here</a></li>
+        <li>Convert your downloaded SVG images to PNG format at 300dpi.</li>
+        <li>Go to <a href="https://www.makeplayingcards.com/design/custom-blank-card.html">makeplayingcards.com</a>, set the "Card stock" dropdown to "(M31) Linen", and proceed through the order process, selecting selecting "Different images" where applicable.</li>
+      </ol>
+    </div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics-compat.js"></script>
+  <script src="https://tylergordonhill.com/global.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

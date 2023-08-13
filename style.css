@@ -1,0 +1,212 @@
+/* Header */
+
+#title {
+  color: var(--dark0);
+}
+#byLine {
+  color: var(--dark1);
+  -webkit-text-decoration-color: var(--dark1);
+          text-decoration-color: var(--dark1);
+}
+#byLine:hover, #byLine:focus-visible {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  #title {
+    color: var(--light1);
+  }
+  #byLine {
+    color: var(--light2);
+    -webkit-text-decoration-color: var(--light2);
+            text-decoration-color: var(--light2);
+  }
+  #byLine:hover, #byLine:focus-visible {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background-image: var(--primary);
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+#title {
+  text-align: center;
+}
+#byLine {
+  height: 3rem;
+  display: inline-block;
+  padding: 0.8rem 1rem 0.6rem 1rem;
+  border-radius: 1.5rem;
+  transition: background-color 200ms;
+  text-align: center;
+}
+
+/* Inputs */
+
+/*General*/
+
+input, button {
+  border: none;
+}
+.bigInputBox{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.smallInputBox{
+  display: flex;
+  gap: 0.3rem;
+}
+.inputBox:not(.checkbox) {
+  justify-content: space-between;
+}
+input.disabled, label.disabled {
+  cursor: default;
+}
+
+/*Button*/
+
+button, a.button {
+  background-color: var(--dark1);
+  color: var(--light0);
+  transition: background-color 200ms;
+}
+button.small, a.button.small {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+}
+button.big, a.button.big {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1.5rem;
+}
+button:hover, button:focus-visible, a.button:hover, a.button:focus-visible {
+  background-color: var(--dark2);
+}
+a.button {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Text, number, and textarea*/
+
+input[type=text], input[type=number], textarea {
+  background-color: var(--dark1);
+  color: var(--light0);
+}
+input[type=text].disabled, input[type=number].disabled, textarea.disabled {
+  background-color: var(--light2);
+  color: var(--dark2);
+}
+input::placeholder {
+  color: var(--light2);
+}
+input[type=text], input[type=number], textarea {
+  border: none;
+  transition: background-color 200ms;
+}
+input[type=text].small, input[type=number].small, textarea {
+  margin: 0.1rem 0;
+  padding: 0.15rem 0.25rem;
+  border-radius: 0.25rem;
+}
+input[type=text].big, input[type=number].big {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1.5rem;
+}
+input[type=text]:hover, input[type=text]:focus-visible,
+input[type=number]:hover, input[type=number]:focus-visible,
+textarea:hover, textarea:focus-visible {
+  background-color: var(--dark2);
+}
+
+/*File*/
+
+input[type=file]::file-selector-button {
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--dark1);
+  color: var(--light0);
+  cursor: pointer;
+}
+input[type=file]::file-selector-button:hover, input[type=file]:focus-visible::file-selector-button {
+  background-color: var(--dark2);
+}
+input[type=file]::file-selector-button {
+  line-height: 1rem;
+  padding: 0.2rem 0.5rem;
+}
+
+
+
+/* Main */
+
+main {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+
+/* Cards */
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#cards > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card {
+  width: 240px;
+  height: 336px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  position: relative;
+}
+
+.card svg {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: -9.6px;
+  left: -10.56px;
+  bottom: -9.6px;
+  right: -10.56px;
+}
+
+
+
+/* Instructions */
+
+#instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+ol {
+  max-width: 65ch;
+}
