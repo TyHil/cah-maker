@@ -15,20 +15,15 @@ window
 
 /* Load SVGs */
 
-fetch('/images/white-front.svg')
-  .then(r => r.text())
-  .then(text => {
-    document.getElementById('white-front').getElementsByClassName('card')[0].innerHTML = text;
-  })
-  .catch((e) => console.error(e));
-
-fetch('/images/black-front.svg')
-  .then(r => r.text())
-  .then(text => {
-    document.getElementById('black-front').getElementsByClassName('card')[0].innerHTML = text;
-  })
-  .catch((e) => console.error(e));
-
+const divIDs = ['white-front', 'black-front'];
+for (let i = 0; i < divIDs.length; i++) {
+  fetch('cah-maker/images/' + divIDs[i] + '.svg')
+    .then(r => r.text())
+    .then(text => {
+      document.getElementById(divIDs[i]).getElementsByClassName('card')[0].innerHTML = text;
+    })
+    .catch((e) => console.error(e));
+}
 
 
 /* Process edits */
