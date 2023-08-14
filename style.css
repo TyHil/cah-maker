@@ -46,6 +46,8 @@ header {
   text-align: center;
 }
 
+
+
 /* Inputs */
 
 /*General*/
@@ -53,7 +55,7 @@ header {
 input, button {
   border: none;
 }
-.bigInputBox{
+.largeInputBox{
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -81,7 +83,13 @@ button.small, a.button.small {
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
 }
-button.big, a.button.big {
+button.medium, a.button.medium {
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 1.5rem;
+}
+button.large, a.button.large {
   font-size: 1rem;
   line-height: 1.6rem;
   padding: 0.7rem 1rem;
@@ -118,7 +126,12 @@ input[type=text].small, input[type=number].small, textarea {
   padding: 0.15rem 0.25rem;
   border-radius: 0.25rem;
 }
-input[type=text].big, input[type=number].big {
+input[type=text].medium, input[type=number].medium {
+  line-height: 1rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 1.5rem;
+}
+input[type=text].large, input[type=number].large {
   font-size: 1rem;
   line-height: 1.6rem;
   padding: 0.7rem 1rem;
