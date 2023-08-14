@@ -18,6 +18,6 @@
       <rect transform="rotate(8)" x="82.618" y="-31.798" width="250" height="350" rx="12.5" fill="#fff" stroke="#000" style="paint-order:normal"/>
     </g>
     <text transform="scale(1,-1)" x="660.37402" y="-36.013252" fill="#000000" font-family="sans-serif" font-size="5px" letter-spacing="0px" stroke-width=".75" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="660.37402" y="-36.013252" fill="#ffffff" font-family="HelveticaNeue" font-size="5px" stroke-width=".75">Cards Against Humanity</tspan></text>
-    <g transform="matrix(.024585 -.0034552 -.0034552 -.024585 647.69 44.243)" stroke="#000"/>
+    <g transform="matrix(0.024585,-0.0034552,-0.0034552,-0.024585,648.58967,44.243)" stroke="#000" class="icon"/>
   </g>
 </svg>

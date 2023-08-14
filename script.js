@@ -64,3 +64,29 @@ function setDownloadHref(card, a, filename) {
   a.href = URL.createObjectURL(blob);
   a.download = filename ?? '';
 }
+
+
+
+/* Icon */
+
+document.getElementById('file').addEventListener('change', function() {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const iconSpots = document.querySelectorAll('svg .icon');
+    for (let i = 0; i < iconSpots.length; i++) {
+      while (iconSpots[i].firstChild) {
+        iconSpots[i].removeChild(iconSpots[i].firstChild);
+      }
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      svg.innerHTML = e.target.result;
+      iconSpots[i].append(svg);
+    }
+    const divIDs = ['white-front', 'black-front'];
+    for (let i = 0; i < divIDs.length; i++) {
+      const div = document.getElementById(divIDs[i]);
+      setDownloadHref(div.getElementsByClassName('card')[0], div.getElementsByTagName('a')[0], divIDs[i] + '.svg');
+    }
+  }
+  reader.readAsText(this.files[0]);
+});
