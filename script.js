@@ -15,12 +15,12 @@ window
 
 /* Load SVGs */
 
-const divIDs = ['white-front', 'black-front'];
-for (let i = 0; i < divIDs.length; i++) {
-  fetch('cah-maker/images/' + divIDs[i] + '.svg')
+const fileNames = ['white-front', 'black-front'];
+for (let i = 0; i < fileNames.length; i++) {
+  fetch('cah-maker/images/' + fileNames[i] + '.svg')
     .then(r => r.text())
     .then(text => {
-      document.getElementById(divIDs[i]).getElementsByClassName('card')[0].innerHTML = text;
+      document.getElementById(fileNames[i]).getElementsByClassName('card')[0].innerHTML = text;
     })
     .catch((e) => console.error(e));
 }
