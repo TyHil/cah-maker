@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 261.12 355.2" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-  <g transform="matrix(1.3333 0 0 -1.3333 -813.36 355.2)">
-    <rect transform="scale(1,-1)" x="610.02" y="-266.4" width="195.83" height="266.4" stroke-width="0"/>
-    <text transform="matrix(.75 0 0 -.75 421.19 255.97)" fill="#fff" font-family="HelveticaNeue" font-size="20px" letter-spacing="0px" word-spacing="0px" style="line-height:1.2;shape-inside:url(#rect1954-84-3);white-space:pre" xml:space="preserve"><tspan x="292.05664" y="40.98402" class="line0">The year is 2050,
-</tspan><tspan x="292.05664" y="64.98402" class="line1">at Sunday mass
-</tspan><tspan x="292.05664" y="88.98402" class="line2">the robo-preacher
-</tspan><tspan x="292.05664" y="112.98402" class="line3">said ______ is the
-</tspan><tspan x="292.05664" y="136.98402" class="line4">only way to get
-</tspan><tspan x="292.05664" y="160.98402" class="line5">into heaven.
-</tspan><tspan x="292.05664" y="184.98402" class="line6">
-</tspan><tspan x="292.05664" y="208.98402" class="line7">
-</tspan><tspan x="292.05664" y="232.98402" class="line8">
-</tspan><tspan x="292.05664" y="256.98402" class="line9">
-</tspan></text>
-    <g transform="matrix(.039315 0 0 -.039315 644.08 45.961)" stroke-width="12">
-      <rect transform="rotate(-20)" x="-110.57" y="34.099" width="250" height="350" rx="12.5" stroke="#fff" style="paint-order:normal"/>
-      <rect transform="rotate(8)" x="82.618" y="-31.798" width="250" height="350" rx="12.5" fill="#fff" stroke="#000" style="paint-order:normal"/>
-    </g>
-    <text transform="scale(1,-1)" x="660.37402" y="-36.013252" fill="#000000" font-family="sans-serif" font-size="5px" letter-spacing="0px" stroke-width=".75" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="660.37402" y="-36.013252" fill="#ffffff" font-family="HelveticaNeue" font-size="5px" stroke-width=".75">Cards Against Humanity</tspan></text>
-    <g transform="matrix(0.024585,-0.0034552,-0.0034552,-0.024585,648.58967,44.243)" stroke="#000" class="icon"/>
-  </g>
+<svg version="1.1" viewBox="0 0 261.12 355.2" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="261.12" height="355.2" fill="#000" stroke-width="0" />
+  <text fill="#fff" font-family="HelveticaNeue" font-size="20px">
+    <tspan x="40" y="55" class="line0">The year is 2050,</tspan>
+    <tspan x="40" y="79" class="line1">at Sunday mass</tspan>
+    <tspan x="40" y="103" class="line2">the robo-preacher</tspan>
+    <tspan x="40" y="127" class="line3">said ______ is the</tspan>
+    <tspan x="40" y="151" class="line4">only way to get</tspan>
+    <tspan x="40" y="175" class="line5">into heaven.</tspan>
+    <tspan x="40" y="199" class="line6"></tspan>
+    <tspan x="40" y="223" class="line7"></tspan>
+    <tspan x="40" y="247" class="line8"></tspan>
+    <tspan x="40" y="271" class="line9"></tspan>
+  </text>
+  <rect transform="rotate(-20)" x="-64" y="293.5" width="12.5" height="18.5" rx="1" fill="#000" stroke="#fff" stroke-width="0.6" />
+  <rect transform="rotate(8)" x="90" y="283" width="13.2" height="18.5" rx="1" fill="#fff" stroke="#000" stroke-width="0.6" />
+  <text x="67" y="307" fill="#fff" font-family="HelveticaNeue" font-size="6.6px">Cards Against Humanity</text>
+  <g transform="translate(51,295) rotate(8) scale(0.04)" class="icon" />
 </svg>

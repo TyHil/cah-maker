@@ -5,9 +5,9 @@ window
   .matchMedia('(prefers-color-scheme: light)')
   .addEventListener('change', function(event) {
     if (event.matches) {
-      tabicon.href = './tabicon-light.png';
+      tabicon.href = 'cah-maker/tabicon-light.png';
     } else {
-      tabicon.href = './tabicon.png';
+      tabicon.href = 'cah-maker/tabicon.png';
     }
   });
 
