@@ -142,6 +142,27 @@ input[type=number]:hover, input[type=number]:focus-visible,
 textarea:hover, textarea:focus-visible {
   background-color: var(--dark2);
 }
+/*Scrollbar*/
+textarea {
+  scrollbar-color: rgba(0, 0, 0, 0.24) var(--dark1);
+}
+textarea::-webkit-scrollbar-track {
+  background-color: var(--dark1);
+}
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+@media (prefers-color-scheme: light) {
+  textarea::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.24);
+  }
+  textarea::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.28);
+  }
+}
 
 /*File*/
 
