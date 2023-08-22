@@ -68,6 +68,7 @@ input, button {
   justify-content: space-between;
 }
 input.disabled, label.disabled {
+  color: var(--light2);
   cursor: default;
 }
 
@@ -77,6 +78,11 @@ button, a.button {
   background-color: var(--dark1);
   color: var(--light0);
   transition: background-color 200ms;
+}
+button.disabled, a.button.disabled, button:disabled {
+  background-color: var(--dark2);
+  color: var(--light2);
+  cursor: default;
 }
 button.small, a.button.small {
   font-size: 0.8rem;
@@ -110,15 +116,17 @@ input[type=text], input[type=number], textarea {
   background-color: var(--dark1);
   color: var(--light0);
 }
-input[type=text].disabled, input[type=number].disabled, textarea.disabled {
-  background-color: var(--light2);
-  color: var(--dark2);
+input[type=text].disabled, input[type=number].disabled, textarea.disabled, input[type=text]:disabled, input[type=number]:disabled, textarea:disabled {
+  background-color: var(--dark2);
+  color: var(--light2);
 }
 input::placeholder {
   color: var(--light2);
 }
 input[type=text], input[type=number], textarea {
   border: none;
+}
+input[type=text], input[type=number] {
   transition: background-color 200ms;
 }
 input[type=text].small, input[type=number].small, textarea {
@@ -138,8 +146,7 @@ input[type=text].large, input[type=number].large {
   border-radius: 1.5rem;
 }
 input[type=text]:hover, input[type=text]:focus-visible,
-input[type=number]:hover, input[type=number]:focus-visible,
-textarea:hover, textarea:focus-visible {
+input[type=number]:hover, input[type=number]:focus-visible {
   background-color: var(--dark2);
 }
 /*Scrollbar*/
@@ -172,6 +179,10 @@ input[type=file]::file-selector-button {
   background-color: var(--dark1);
   color: var(--light0);
   cursor: pointer;
+}
+input[type=file].disabled::file-selector-button, input[type=file]:disabled::file-selector-button {
+  background-color: var(--dark2);
+  color: var(--light2);
 }
 input[type=file]::file-selector-button:hover, input[type=file]:focus-visible::file-selector-button {
   background-color: var(--dark2);
