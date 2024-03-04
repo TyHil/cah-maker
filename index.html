@@ -1,135 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <!-- HTML Meta Tags -->
+    <title>CAH Maker</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Generate Cards Against Humanity cards for personal use." />
+    <meta name="canonical" href="https://tylergordonhill.com/cah-maker" />
+    <meta name="theme-color" content="#128A74" />
 
-<head>
-  <!-- HTML Meta Tags -->
-  <title>CAH Maker</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Generate Cards Against Humanity cards for personal use." />
-  <meta name="canonical" href="https://tylergordonhill.com/cah-maker" />
-  <meta name="theme-color" content="#128A74" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CAH Maker" />
+    <meta
+      property="og:description"
+      content="Generate Cards Against Humanity cards for personal use."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tylergordonhill.com/cah-maker" />
+    <meta property="og:image" content="<>" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Screenshot of the website displaying the backs of the cards."
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="CAH Maker" />
-  <meta property="og:description"
-    content="Generate Cards Against Humanity cards for personal use." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tylergordonhill.com/cah-maker" />
-  <meta property="og:image" content="<>" />
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt"
-    content="Screenshot of the website displaying the backs of the cards.">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="tylergordonhill.com" />
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:domain" content="tylergordonhill.com" />
+    <!-- Link Tags -->
+    <link rel="icon" href="cah-maker/tabicon.png" />
+    <link href="https://tylergordonhill.com/global.css" rel="stylesheet" type="text/css" />
+    <link href="cah-maker/style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-  <!-- Link Tags -->
-  <link rel="icon" href="cah-maker/tabicon.png" />
-  <link href="https://tylergordonhill.com/global.css" rel="stylesheet" type="text/css" />
-  <link href="cah-maker/style.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
+    <header>
+      <h2 id="title">Cards Against Humanity Card Maker</h2>
+      <a id="byLine" href="/">Tyler Gordon Hill</a>
+    </header>
 
-<body>
-  <header>
-    <h2 id="title">Cards Against Humanity Card Maker</h2>
-    <a id="byLine" href="/">Tyler Gordon Hill</a>
-  </header>
-
-  <main>
-    <div id="cards">
-      <div>
-        <div class="card">
-          <img width="261.12" height="355.2" src="cah-maker/images/white-back.svg" alt="White Back" />
+    <main>
+      <div id="cards">
+        <div>
+          <div class="card">
+            <img
+              width="261.12"
+              height="355.2"
+              src="cah-maker/images/white-back.svg"
+              alt="White Back"
+            />
+          </div>
+          <a href="cah-maker/images/white-back.svg" download="" class="button large">Download</a>
         </div>
-        <a href="cah-maker/images/white-back.svg" download="" class="button large">Download</a>
-      </div>
-      <div>
-        <div class="card">
-          <img width="261.12" height="355.2" src="cah-maker/images/black-back.svg" alt="Black Back" />
+        <div>
+          <div class="card">
+            <img
+              width="261.12"
+              height="355.2"
+              src="cah-maker/images/black-back.svg"
+              alt="Black Back"
+            />
+          </div>
+          <a href="cah-maker/images/black-back.svg" download="" class="button large">Download</a>
         </div>
-        <a href="cah-maker/images/black-back.svg" download="" class="button large">Download</a>
+        <div id="white-front">
+          <div class="card"></div>
+          <input type="text" value="Laced church wine" placeholder="Line 1" class="medium" />
+          <button class="medium addLine">Add line</button>
+          <a href="cah-maker/images/white-front.svg" download="" class="button large">Download</a>
+        </div>
+        <div id="black-front">
+          <div class="card"></div>
+          <input type="text" value="The year is 2050," placeholder="Line 1" class="medium" />
+          <input type="text" value="at Sunday mass" placeholder="Line 2" class="medium" />
+          <input type="text" value="the robo-preacher" placeholder="Line 3" class="medium" />
+          <input type="text" value="said ______ is the" placeholder="Line 4" class="medium" />
+          <input type="text" value="only way to get" placeholder="Line 5" class="medium" />
+          <input type="text" value="into heaven." placeholder="Line 6" class="medium" />
+          <button class="medium addLine">Add line</button>
+          <a href="cah-maker/images/black-front.svg" download="" class="button large">Download</a>
+        </div>
       </div>
-      <div id="white-front">
-        <div class="card"></div>
-        <input type="text" value="Laced church wine" placeholder="Line 1" class="medium">
-        <button class="medium addLine">Add line</button>
-        <a href="cah-maker/images/white-front.svg" download="" class="button large">Download</a>
-      </div>
-      <div id="black-front">
-        <div class="card"></div>
-        <input type="text" value="The year is 2050," placeholder="Line 1" class="medium">
-        <input type="text" value="at Sunday mass" placeholder="Line 2" class="medium">
-        <input type="text" value="the robo-preacher" placeholder="Line 3" class="medium">
-        <input type="text" value="said ______ is the" placeholder="Line 4" class="medium">
-        <input type="text" value="only way to get" placeholder="Line 5" class="medium">
-        <input type="text" value="into heaven." placeholder="Line 6" class="medium">
-        <button class="medium addLine">Add line</button>
-        <a href="cah-maker/images/black-front.svg" download="" class="button large">Download</a>
-      </div>
-    </div>
 
-    <div id="icon">
-      <div class="smallInputBox">
-        <label for="file">Card pack icon</label>
-        <input type="file" id="file" accept="image/svg+xml">
+      <div id="icon">
+        <div class="smallInputBox">
+          <label for="file">Card pack icon</label>
+          <input type="file" id="file" accept="image/svg+xml" />
+        </div>
+        <a href="cah-maker/images/icon.svg" download="" class="button small"
+          >Download example icon</a
+        >
       </div>
-      <a href="cah-maker/images/icon.svg" download="" class="button small">Download example icon</a>
-    </div>
 
-    <div class="text">
-      <h3>Instructions</h3>
-      <ol>
-        <li>Design and download all of the faces of the cards you will be ordering here. These are made according to the template provided by makeplayingcards.com <a href="https://www.makeplayingcards.com/template/customer/builder/uploadfile/template/playingcard/playingcard.html?unitNo=C380050185D1C1AF&pieces=55" target="_blank" rel="noopener">here</a></li>
-        <li>Convert your downloaded SVG images to PNG format at 300dpi.</li>
-        <li>Go to <a href="https://www.makeplayingcards.com/design/custom-blank-card.html" target="_blank" rel="noopener">makeplayingcards.com</a>, set the "Card stock" dropdown to "(M31) Linen", and proceed through the order process, selecting "Different images" where applicable.</li>
-      </ol>
-    </div>
+      <div class="text">
+        <h3>Instructions</h3>
+        <ol>
+          <li
+            >Design and download all of the faces of the cards you will be ordering here. These are
+            made according to the template provided by makeplayingcards.com
+            <a
+              href="https://www.makeplayingcards.com/template/customer/builder/uploadfile/template/playingcard/playingcard.html?unitNo=C380050185D1C1AF&pieces=55"
+              target="_blank"
+              rel="noopener"
+              >here</a
+            ></li
+          >
+          <li>Convert your downloaded SVG images to PNG format at 300dpi.</li>
+          <li
+            >Go to
+            <a
+              href="https://www.makeplayingcards.com/design/custom-blank-card.html"
+              target="_blank"
+              rel="noopener"
+              >makeplayingcards.com</a
+            >, set the "Card stock" dropdown to "(M31) Linen", and proceed through the order
+            process, selecting "Different images" where applicable.</li
+          >
+        </ol>
+      </div>
 
-    <div class="text">
-      <h3>Quick Answers</h3>
+      <div class="text">
+        <h3>Quick Answers</h3>
+        <div>
+          <h4>How do I remove a line?</h4>
+          <p>Just leave it blank.</p>
+        </div>
+        <div>
+          <h4>The font looks off</h4>
+          <p
+            >Helvetica Neue Bold may not be installed on your device. You'll need to download and
+            install it from somewhere like
+            <a href="https://fontsgeek.com/fonts/helveticaneue-bold" target="_blank" rel="noopener"
+              >Fonts geek</a
+            >.</p
+          >
+        </div>
+        <div>
+          <h4>What should I use to convert to PNG?</h4>
+          <p
+            >I use <a href="https://inkscape.org/" target="_blank" rel="noopener">Inskscape</a> as
+            it allows setting the DPI and much more.</p
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer>
       <div>
-        <h4>How do I remove a line?</h4>
-        <p>Just leave it blank.</p>
+        <p><strong>Contact and Social</strong></p>
+        <a href="mailto:tylergordonhill@gmail.com" target="_blank" rel="noopener">Email</a>
+        <a href="http://www.linkedin.com/in/tylergordonhill" target="_blank" rel="noopener"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/TyHil" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://replit.com/@TylerGHill" target="_blank" rel="noopener">Replit</a>
+        <a href="https://thangs.com/TylerHill" target="_blank" rel="noopener">Thangs</a>
       </div>
       <div>
-        <h4>The font looks off</h4>
-        <p>Helvetica Neue Bold may not be installed on your device. You'll need to download and install it from somewhere like <a href="https://fontsgeek.com/fonts/helveticaneue-bold" target="_blank" rel="noopener">Fonts geek</a>.</p>
+        <p><strong>Subsites</strong></p>
+        <a href="/set-operations-for-spotify">Set Operations for Spotify</a>
+        <a href="/typewriter-formatting">Typewriter Formatting</a>
+        <a href="/cah-maker">Cards Against Humanity Card Maker</a>
+        <a href="/response-display">Response Display</a>
+        <a href="/password-generator">Password Generator</a>
+        <a href="/recipes">Recipes</a>
       </div>
-      <div>
-        <h4>What should I use to convert to PNG?</h4>
-        <p>I use <a href="https://inkscape.org/" target="_blank" rel="noopener">Inskscape</a> as it allows setting the DPI and much more.</p>
-      </div>
-    </div>
-  </main>
+    </footer>
 
-  <footer>
-    <div>
-      <p><strong>Contact and Social</strong></p>
-      <a href="mailto:tylergordonhill@gmail.com" target="_blank" rel="noopener">Email</a>
-      <a href="http://www.linkedin.com/in/tylergordonhill" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/TyHil" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://replit.com/@TylerGHill" target="_blank" rel="noopener">Replit</a>
-      <a href="https://thangs.com/TylerHill" target="_blank" rel="noopener">Thangs</a>
-    </div>
-    <div>
-      <p><strong>Subsites</strong></p>
-      <a href="/set-operations-for-spotify">Set Operations for Spotify</a>
-      <a href="/typewriter-formatting">Typewriter Formatting</a>
-      <a href="/cah-maker">Cards Against Humanity Card Maker</a>
-      <a href="/response-display">Response Display</a>
-      <a href="/password-generator">Password Generator</a>
-      <a href="/recipes">Recipes</a>
-    </div>
-  </footer>
-
-  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics-compat.js"></script>
-  <script src="https://tylergordonhill.com/global.js"></script>
-  <script src="cah-maker/script.js"></script>
-</body>
-
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics-compat.js"></script>
+    <script src="https://tylergordonhill.com/global.js"></script>
+    <script src="cah-maker/script.js"></script>
+  </body>
 </html>
