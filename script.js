@@ -67,7 +67,11 @@ for (let i = 0; i < divIDs.length; i++) {
 function setDownloadHref(card, a, filename) {
   const blob = new Blob([card.innerHTML], { type: 'image/svg+xml' });
   a.href = URL.createObjectURL(blob);
-  a.download = filename ?? '';
+  if (typeof filename === 'undefined') {
+    a.download = '';
+  } else {
+    a.download = filename;
+  }
 }
 
 /* Icon */
