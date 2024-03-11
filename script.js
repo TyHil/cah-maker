@@ -101,3 +101,118 @@ document.getElementById('file').addEventListener('change', function () {
   };
   reader.readAsText(this.files[0]);
 });
+
+/* Toasts */
+
+function createToast(text, options) {
+  const defaults = {
+    permanent: false,
+    delay: 6000,
+    button: false,
+    buttonText: '',
+    onButtonClick: () => {},
+    onClose: () => {},
+    htmlText: false
+  };
+  options = Object.assign({}, defaults, options);
+
+  const div = document.createElement('div');
+  div.classList.add('toast');
+
+  function close() {
+    if (document.body.contains(div)) {
+      div.classList.add('animateout');
+      options.onClose();
+      div.addEventListener('animationend', function () {
+        div.remove();
+      });
+    }
+  }
+
+  const x = document.createElement('button');
+  x.classList.add('close');
+  x.innerHTML = '&times;';
+  x.addEventListener('click', close);
+  div.appendChild(x);
+
+  if (options.htmlText) {
+    div.appendChild(text);
+  } else {
+    const p = document.createElement('p');
+    p.innerText = text;
+    div.appendChild(p);
+  }
+
+  if (options.button) {
+    const undo = document.createElement('button');
+    undo.innerText = options.buttonText;
+    undo.addEventListener('click', function () {
+      options.onButtonClick();
+      div.classList.add('animateout');
+      div.addEventListener('animationend', function () {
+        div.remove();
+      });
+    });
+    div.appendChild(undo);
+  }
+
+  if (!options.permanent) {
+    let timer = setTimeout(close, options.delay);
+    div.addEventListener('mouseover', function () {
+      clearTimeout(timer);
+    });
+    div.addEventListener('mouseout', function () {
+      timer = setTimeout(close, options.delay);
+    });
+  }
+
+  document.getElementById('toasts').appendChild(div);
+  div.classList.add('animatein');
+  return close;
+}
+
+/* Font not available */
+//From: https://stackoverflow.com/a/62687060
+
+const container = document.createElement('span');
+container.innerHTML = Array(100).join('wi');
+container.style.cssText = [
+  'position:absolute',
+  'width:auto',
+  'font-size:128px',
+  'left:-99999px'
+].join(' !important;');
+
+function getWidth(fontFamily) {
+  container.style.fontFamily = fontFamily;
+  document.body.appendChild(container);
+  width = container.clientWidth;
+  document.body.removeChild(container);
+  return width;
+}
+
+// Pre compute the widths of monospace, serif & sans-serif
+// to improve performance.
+const monoWidth = getWidth('monospace');
+const serifWidth = getWidth('serif');
+const sansWidth = getWidth('sans-serif');
+
+function isFontAvailable(font) {
+  return (
+    monoWidth !== getWidth(font + ',monospace') ||
+    sansWidth !== getWidth(font + ',sans-serif') ||
+    serifWidth !== getWidth(font + ',serif')
+  );
+}
+
+if (!isFontAvailable('HelveticaNeue')) {
+  const p = document.createElement('p');
+  p.innerText = "Looks like you don't have the right font installed. Download and install it from ";
+  const a = document.createElement('a');
+  a.href = 'https://fontsgeek.com/fonts/helveticaneue-bold';
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.innerText = 'Fonts geek';
+  p.appendChild(a);
+  createToast(p, { permanent: true, htmlText: true });
+}
