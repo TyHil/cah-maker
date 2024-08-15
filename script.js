@@ -6,15 +6,14 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
 
 /* Load SVGs */
 
-const fileNames = ['white-front', 'black-front'];
-for (let i = 0; i < fileNames.length; i++) {
-  fetch('cah-maker/images/' + fileNames[i] + '.svg')
+['white-front', 'black-front'].forEach(fileName => {
+  fetch('cah-maker/images/' + fileName + '.svg')
     .then(r => r.text())
     .then(text => {
-      document.getElementById(fileNames[i]).getElementsByClassName('card')[0].innerHTML = text;
+      document.getElementById(fileName).getElementsByClassName('card')[0].innerHTML = text;
     })
     .catch(e => console.error(e));
-}
+});
 
 /* Process edits */
 
@@ -22,47 +21,56 @@ function setSVGLine(div, number, value) {
   div.getElementsByTagName('svg')[0].getElementsByClassName('line' + number)[0].textContent = value;
 }
 
-const divIDs = ['white-front', 'black-front'];
-for (let i = 0; i < divIDs.length; i++) {
-  const div = document.getElementById(divIDs[i]);
+['white-front', 'black-front']
+  .map(id => document.getElementById(id))
+  .forEach(div => {
+    const lines = div.getElementsByTagName('input');
 
-  //Existing
-  const lines = div.getElementsByTagName('input');
-  for (let j = 0; j < lines.length; j++) {
-    lines[j].addEventListener('input', function () {
-      setSVGLine(div, j, this.value);
-    });
-    lines[j].addEventListener('change', function () {
-      setDownloadHref(
-        div.getElementsByClassName('card')[0],
-        div.getElementsByTagName('a')[0],
-        divIDs[i] + '.svg'
-      );
-    });
-  }
+    function setListeners(line, num) {
+      line.addEventListener('input', function () {
+        setSVGLine(div, num, this.value);
+      });
+      line.addEventListener('change', function () {
+        setDownloadHref(
+          div.getElementsByClassName('card')[0],
+          div.getElementsByTagName('a')[0],
+          div.id + ' (' + lines[0].value + ').svg'
+        );
+      });
+      line.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          if (line.nextElementSibling.tagName === 'INPUT') {
+            line.nextElementSibling.focus();
+          } else {
+            addLine();
+          }
+        }
+      });
+    }
 
-  //New
-  div.getElementsByClassName('addLine')[0].addEventListener('click', function () {
-    const linesLength = div.getElementsByTagName('input').length;
-    const newLine = lines[0].cloneNode();
-    newLine.value = '';
-    newLine.placeholder = 'Line ' + (linesLength + 1);
-    newLine.addEventListener('input', function () {
-      setSVGLine(div, linesLength, this.value);
-    });
-    newLine.addEventListener('change', function () {
-      setDownloadHref(
-        div.getElementsByClassName('card')[0],
-        div.getElementsByTagName('a')[0],
-        divIDs[i] + '.svg'
-      );
-    });
-    div.insertBefore(newLine, this);
-    if (linesLength >= 9) {
-      this.style.display = 'none';
+    //New
+    const addLineEl = div.getElementsByClassName('addLine')[0];
+    function addLine() {
+      const linesLength = div.getElementsByTagName('input').length;
+      if (linesLength < 10) {
+        const newLine = lines[0].cloneNode();
+        newLine.value = '';
+        newLine.placeholder = 'Line ' + (linesLength + 1);
+        setListeners(newLine, linesLength);
+        div.insertBefore(newLine, addLineEl);
+        if (linesLength >= 9) {
+          addLineEl.style.display = 'none';
+        }
+        newLine.focus();
+      }
+    }
+    addLineEl.addEventListener('click', addLine);
+
+    //Existing
+    for (let j = 0; j < lines.length; j++) {
+      setListeners(lines[j], j);
     }
   });
-}
 
 function setDownloadHref(card, a, filename) {
   const blob = new Blob([card.innerHTML], { type: 'image/svg+xml' });
