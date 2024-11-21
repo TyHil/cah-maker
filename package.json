@@ -25,7 +25,8 @@
     "plugins": [
       "@prettier/plugin-xml"
     ],
-    "xmlWhitespaceSensitivity": "ignore"
+    "xmlWhitespaceSensitivity": "ignore",
+    "proseWrap": "always"
   },
   "eslintConfig": {
     "env": {
