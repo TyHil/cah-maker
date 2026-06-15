@@ -61,13 +61,13 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
     // Add line
     const addLineEl = div.getElementsByClassName('addLine')[0];
     function addLine() {
-      const linesLength = div.getElementsByTagName('input').length;
+      const linesLength = div.getElementsByClassName('text-input').length;
       if (linesLength < 10) {
-        const newLine = lines[0].cloneNode();
+        const newLine = lineInputs[0].cloneNode();
         newLine.value = '';
         newLine.placeholder = 'Line ' + (linesLength + 1);
         setListeners(newLine, linesLength);
-        div.insertBefore(newLine, addLineEl);
+        div.getElementsByClassName('lines-container')[0].insertBefore(newLine, addLineEl);
         if (linesLength >= 9) {
           addLineEl.style.display = 'none';
         }

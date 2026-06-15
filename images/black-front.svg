@@ -3,9 +3,9 @@
   <rect x="0" y="0" width="261.12" height="355.2" fill="#000" stroke-width="0" />
   <image
     href=""
-    x="40"
-    y="40"
-    width="181.12"
+    x="30"
+    y="30"
+    width="201.12"
     height="0"
     clip-path="inset(0% round 8px)"
     class="image"
