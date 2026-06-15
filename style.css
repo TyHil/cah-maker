@@ -7,6 +7,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  --card-width: 238px;
+  --card-height: 332px;
 }
 
 /* Cards */
@@ -19,14 +21,15 @@ main {
 }
 
 #cards > div {
+  width: var(--card-width);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
 .card {
-  width: 240px;
-  height: 336px;
+  width: var(--card-width);
+  height: var(--card-height);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -53,17 +56,50 @@ main {
   right: -10.56px;
 }
 
+.image-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 1.5rem;
+  background-color: var(--dark1);
+}
+
+.image-input-container div {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.image-input-container div .remove-image {
+  display: none;
+}
+
+.image-input-container div .remove-image,
+.image-input-container input[type='file']::file-selector-button {
+  background-color: var(--dark2);
+}
+.image-input-container div .remove-image.disabled,
+.image-input-container div .remove-image:disabled,
+.image-input-container input[type='file'].disabled::file-selector-button,
+.image-input-container input[type='file']:disabled::file-selector-button {
+  background-color: var(--dark3);
+}
+.image-input-container div .remove-image:hover,
+.image-input-container div .remove-image:focus-visible,
+.image-input-container input[type='file']::file-selector-button:hover,
+.image-input-container input[type='file']:focus-visible::file-selector-button {
+  background-color: var(--dark3);
+}
+
 /* Icon */
 
-#icon {
+#icon-input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-}
-
-#icon input {
-  text-align: end;
 }
 
 /* Instructions, FAQ */

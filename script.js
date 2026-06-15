@@ -24,31 +24,37 @@ function setSVGLine(div, number, value) {
 ['white-front', 'black-front']
   .map(id => document.getElementById(id))
   .forEach(div => {
-    const lines = div.getElementsByTagName('input');
-
-    function setListeners(line, num) {
-      line.addEventListener('input', function () {
+    function localSetDownloadHref() {
+      setDownloadHref(
+        div.getElementsByClassName('card')[0],
+        div.getElementsByTagName('a')[0],
+        div.id + ' (' + lineInputs[0].value + ').svg'
+      );
+    }
+    // Text
+    const lineInputs = div.getElementsByClassName('text-input');
+    function setListeners(lineInput, num) {
+      lineInput.addEventListener('input', function () {
         setSVGLine(div, num, this.value);
       });
-      line.addEventListener('change', function () {
-        setDownloadHref(
-          div.getElementsByClassName('card')[0],
-          div.getElementsByTagName('a')[0],
-          div.id + ' (' + lines[0].value + ').svg'
-        );
+      lineInput.addEventListener('change', function () {
+        localSetDownloadHref();
       });
-      line.addEventListener('keypress', function (e) {
+      lineInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
-          if (line.nextElementSibling.tagName === 'INPUT') {
-            line.nextElementSibling.focus();
+          if (lineInput.nextElementSibling.tagName === 'INPUT') {
+            lineInput.nextElementSibling.focus();
           } else {
             addLine();
           }
         }
       });
     }
+    for (let j = 0; j < lineInputs.length; j++) {
+      setListeners(lineInputs[j], j);
+    }
 
-    //New
+    // Add line
     const addLineEl = div.getElementsByClassName('addLine')[0];
     function addLine() {
       const linesLength = div.getElementsByTagName('input').length;
@@ -66,10 +72,51 @@ function setSVGLine(div, number, value) {
     }
     addLineEl.addEventListener('click', addLine);
 
-    //Existing
-    for (let j = 0; j < lines.length; j++) {
-      setListeners(lines[j], j);
+    // Image
+    const imageInput = div.getElementsByClassName('image-input')[0];
+    const removeImageButton = div.getElementsByClassName('remove-image')[0];
+    function removeImage() {
+      const imageSpot = div.querySelectorAll('svg .image')[0];
+      const textGroup = div.querySelectorAll('svg .text')[0];
+      imageSpot.setAttribute('href', '');
+      imageSpot.setAttribute('height', 0);
+      textGroup.setAttribute('transform', 'translate(0, 0)');
+      localSetDownloadHref();
+      removeImageButton.style.display = 'none';
     }
+    imageInput.addEventListener('change', function () {
+      if (!this.files.length) {
+        removeImage();
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imageSpot = div.querySelectorAll('svg .image')[0];
+        const textGroup = div.querySelectorAll('svg .text')[0];
+
+        imageSpot.setAttribute('href', e.target.result);
+
+        const img = new Image();
+        img.onload = function () {
+          const width = img.naturalWidth;
+          const height = img.naturalHeight;
+          const heightInSvg = (imageSpot.getAttribute('width') / width) * height;
+          imageSpot.setAttribute('height', heightInSvg);
+          // 15 size gap minus 10 px closer to the top that the image is than the text
+          textGroup.setAttribute('transform', 'translate(0, ' + (heightInSvg + 15 - 10) + ')');
+
+          localSetDownloadHref();
+
+          removeImageButton.style.display = 'block';
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(this.files[0]);
+    });
+    removeImageButton.addEventListener('click', function () {
+      removeImage();
+      imageInput.value = '';
+    });
   });
 
 function setDownloadHref(card, a, filename) {
@@ -84,7 +131,7 @@ function setDownloadHref(card, a, filename) {
 
 /* Icon */
 
-document.getElementById('file').addEventListener('change', function () {
+document.getElementById('icon-input').addEventListener('change', function () {
   const reader = new FileReader();
   reader.onload = function (e) {
     const iconSpots = document.querySelectorAll('svg .icon');

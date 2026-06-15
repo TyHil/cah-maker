@@ -77,8 +77,25 @@
         </div>
         <div id="white-front">
           <div class="card"></div>
-          <input type="text" value="Laced church wine" placeholder="Line 1" class="medium" />
-          <button class="medium addLine">Add line</button>
+          <input
+            type="text"
+            value="Laced church wine"
+            placeholder="Line 1"
+            class="medium text-input"
+          />
+          <button class="medium addLine">Add Line</button>
+          <div class="image-input-container">
+            <div>
+              <label for="white-front-image-input">Add Image</label>
+              <button class="small remove-image">Remove</button>
+            </div>
+            <input
+              type="file"
+              id="white-front-image-input"
+              class="image-input"
+              accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+            />
+          </div>
           <a
             href="/cah-maker/images/white-front.svg"
             download="white-front (Laced church wine).svg"
@@ -88,13 +105,50 @@
         </div>
         <div id="black-front">
           <div class="card black"></div>
-          <input type="text" value="The year is 2050," placeholder="Line 1" class="medium" />
-          <input type="text" value="at Sunday mass" placeholder="Line 2" class="medium" />
-          <input type="text" value="the robo-preacher" placeholder="Line 3" class="medium" />
-          <input type="text" value="said ______ is the" placeholder="Line 4" class="medium" />
-          <input type="text" value="only way to get" placeholder="Line 5" class="medium" />
-          <input type="text" value="into heaven." placeholder="Line 6" class="medium" />
-          <button class="medium addLine">Add line</button>
+          <input
+            type="text"
+            value="The year is 2050,"
+            placeholder="Line 1"
+            class="medium text-input"
+          />
+          <input
+            type="text"
+            value="at Sunday mass"
+            placeholder="Line 2"
+            class="medium text-input"
+          />
+          <input
+            type="text"
+            value="the robo-preacher"
+            placeholder="Line 3"
+            class="medium text-input"
+          />
+          <input
+            type="text"
+            value="said ______ is the"
+            placeholder="Line 4"
+            class="medium text-input"
+          />
+          <input
+            type="text"
+            value="only way to get"
+            placeholder="Line 5"
+            class="medium text-input"
+          />
+          <input type="text" value="into heaven." placeholder="Line 6" class="medium text-input" />
+          <button class="medium addLine">Add Line</button>
+          <div class="image-input-container">
+            <div>
+              <label for="black-front-image-input">Add Image</label>
+              <button class="small remove-image">Remove</button>
+            </div>
+            <input
+              type="file"
+              id="black-front-image-input"
+              class="image-input"
+              accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+            />
+          </div>
           <a
             href="/cah-maker/images/black-front.svg"
             download="black-front (The year is 2050,).svg"
@@ -104,9 +158,9 @@
         </div>
       </div>
 
-      <div id="icon">
-        <label for="file"><h3>Card Pack Icon</h3></label>
-        <input type="file" id="file" accept="image/svg+xml" />
+      <div id="icon-input-container">
+        <label for="icon-input"><h3>Card Pack Icon</h3></label>
+        <input type="file" id="icon-input" accept="image/svg+xml" />
         <a href="/cah-maker/images/icon.svg" download="" class="button small"
           >Download example icon</a
         >

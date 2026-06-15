@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg version="1.1" viewBox="0 0 261.12 355.2" xmlns="http://www.w3.org/2000/svg">
   <rect x="0" y="0" width="261.12" height="355.2" fill="#fff" stroke-width="0" />
-  <text fill="#000" font-family="HelveticaNeue" font-size="20px">
+  <image
+    href=""
+    x="30"
+    y="30"
+    width="201.12"
+    height="0"
+    clip-path="inset(0% round 8px)"
+    class="image"
+  />
+  <text
+    fill="#000"
+    font-family="HelveticaNeue"
+    font-size="20px"
+    transform="translate(0, 0)"
+    class="text"
+  >
     <tspan x="40" y="55" class="line0">Laced church wine</tspan>
     <tspan x="40" y="79" class="line1" />
     <tspan x="40" y="103" class="line2" />
