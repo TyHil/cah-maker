@@ -76,23 +76,6 @@ main {
   display: none;
 }
 
-.image-input-container div .remove-image,
-.image-input-container input[type='file']::file-selector-button {
-  background-color: var(--dark2);
-}
-.image-input-container div .remove-image.disabled,
-.image-input-container div .remove-image:disabled,
-.image-input-container input[type='file'].disabled::file-selector-button,
-.image-input-container input[type='file']:disabled::file-selector-button {
-  background-color: var(--dark3);
-}
-.image-input-container div .remove-image:hover,
-.image-input-container div .remove-image:focus-visible,
-.image-input-container input[type='file']::file-selector-button:hover,
-.image-input-container input[type='file']:focus-visible::file-selector-button {
-  background-color: var(--dark3);
-}
-
 /* Icon */
 
 #icon-input-container {

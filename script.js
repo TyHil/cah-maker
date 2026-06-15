@@ -17,10 +17,6 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
 
 /* Process edits */
 
-function setSVGLine(div, number, value) {
-  div.getElementsByTagName('svg')[0].getElementsByClassName('line' + number)[0].textContent = value;
-}
-
 ['white-front', 'black-front']
   .map(id => document.getElementById(id))
   .forEach(div => {
@@ -35,7 +31,15 @@ function setSVGLine(div, number, value) {
     const lineInputs = div.getElementsByClassName('text-input');
     function setListeners(lineInput, num) {
       lineInput.addEventListener('input', function () {
-        setSVGLine(div, num, this.value);
+        const svg = div.getElementsByTagName('svg')[0];
+        const rect = svg.getElementsByTagName('rect')[0];
+        const line = svg.getElementsByClassName('line' + num)[0];
+        line.textContent = this.value;
+        if (line.getBBox().width > rect.getAttribute('width') - 2 * line.getAttribute('x')) {
+          lineInput.setCustomValidity('Line is too wide.');
+        } else {
+          lineInput.setCustomValidity('');
+        }
       });
       lineInput.addEventListener('change', function () {
         localSetDownloadHref();
