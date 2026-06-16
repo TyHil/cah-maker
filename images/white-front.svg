@@ -27,6 +27,8 @@
     <tspan x="40" y="223" class="line7" />
     <tspan x="40" y="247" class="line8" />
     <tspan x="40" y="271" class="line9" />
+    <tspan x="40" y="295" class="line10" />
+    <tspan x="40" y="319" class="line11" />
   </text>
   <rect transform="rotate(-20)" x="-64" y="293" width="13" height="19" rx="1" fill="#000" />
   <rect

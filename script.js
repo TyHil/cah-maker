@@ -17,10 +17,10 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
 
 /* Process edits */
 
-const MAX_LINES = 10;
+const MAX_LINES = 12;
 const Y_POSITIONS = {
-  large: [55, 79, 103, 127, 151, 175, 199, 223, 247, 271],
-  small: [51, 71, 91, 111, 131, 151, 171, 191, 211, 231]
+  large: [55, 79, 103, 127, 151, 175, 199, 223, 247, 271, 295, 319],
+  small: [51, 71, 91, 111, 131, 151, 171, 191, 211, 231, 251, 271]
 };
 // 15 - 10: 15 size gap minus 10 px closer to the top that the image is than the text
 const IMAGE_TRANSFORM = 5;

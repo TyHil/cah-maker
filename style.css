@@ -68,7 +68,7 @@ main {
   border-radius: 1.5rem 1.5rem 0 0;
 }
 .lines-container .addLine,
-.lines-container .text-input.medium:nth-of-type(10) {
+.lines-container .text-input.medium:nth-of-type(12) {
   border-radius: 0 0 1.5rem 1.5rem;
 }
 
