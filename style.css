@@ -72,13 +72,31 @@ main {
   border-radius: 0 0 1.5rem 1.5rem;
 }
 
+details,
+details::details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+details > summary {
+  padding: 0.45rem 0.75rem;
+  border-radius: 1.5rem;
+  background-color: var(--dark1);
+}
+details:open > summary {
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+details > .other-input-container:last-of-type {
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
 .other-input-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 0.5rem;
   padding: 0.45rem 0.75rem;
-  border-radius: 1.5rem;
+  border-radius: 0;
   background-color: var(--dark1);
 }
 
