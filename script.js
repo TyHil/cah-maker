@@ -17,6 +17,14 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
 
 /* Process edits */
 
+const MAX_LINES = 10;
+const Y_POSITIONS = {
+  large: [55, 79, 103, 127, 151, 175, 199, 223, 247, 271],
+  small: [51, 71, 91, 111, 131, 151, 171, 191, 211, 231]
+};
+// 15 - 10: 15 size gap minus 10 px closer to the top that the image is than the text
+const IMAGE_TRANSFORM = 5;
+
 ['white-front', 'black-front']
   .map(id => document.getElementById(id))
   .forEach(div => {
@@ -54,15 +62,15 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
         }
       });
     }
-    for (let j = 0; j < lineInputs.length; j++) {
-      setListeners(lineInputs[j], j);
+    for (let i = 0; i < lineInputs.length; i++) {
+      setListeners(lineInputs[i], i);
     }
 
     // Add line
     const addLineEl = div.getElementsByClassName('addLine')[0];
     function addLine() {
       const linesLength = div.getElementsByClassName('text-input').length;
-      if (linesLength < 10) {
+      if (linesLength < MAX_LINES) {
         const newLine = lineInputs[0].cloneNode();
         newLine.value = '';
         newLine.placeholder = 'Line ' + (linesLength + 1);
@@ -106,8 +114,10 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
           const height = img.naturalHeight;
           const heightInSvg = (imageSpot.getAttribute('width') / width) * height;
           imageSpot.setAttribute('height', heightInSvg);
-          // 15 size gap minus 10 px closer to the top that the image is than the text
-          textGroup.setAttribute('transform', 'translate(0, ' + (heightInSvg + 15 - 10) + ')');
+          textGroup.setAttribute(
+            'transform',
+            'translate(0, ' + (heightInSvg + IMAGE_TRANSFORM) + ')'
+          );
 
           localSetDownloadHref();
 
@@ -121,6 +131,21 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matc
       removeImage();
       imageInput.value = '';
     });
+
+    // Small text
+    const smallTextInput = div.getElementsByClassName('small-text-input')[0];
+    function updateTextSize() {
+      const textGroup = div.querySelectorAll('svg .text')[0];
+      textGroup.setAttribute('font-size', smallTextInput.checked ? '16px' : '20px');
+
+      const lines = div.querySelectorAll('svg tspan');
+      for (let i = 0; i < lines.length; i++) {
+        lines[i].setAttribute('y', Y_POSITIONS[smallTextInput.checked ? 'small' : 'large'][i]);
+      }
+
+      localSetDownloadHref();
+    }
+    smallTextInput.addEventListener('change', updateTextSize);
   });
 
 function setDownloadHref(card, a, filename) {

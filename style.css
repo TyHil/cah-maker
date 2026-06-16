@@ -72,7 +72,7 @@ main {
   border-radius: 0 0 1.5rem 1.5rem;
 }
 
-.image-input-container {
+.other-input-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -82,13 +82,13 @@ main {
   background-color: var(--dark1);
 }
 
-.image-input-container div {
+.other-input-container div {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
 }
 
-.image-input-container div .remove-image {
+.other-input-container div .remove-image {
   display: none;
 }
 
