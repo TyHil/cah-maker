@@ -49,7 +49,7 @@
   <body>
     <header>
       <h2 id="title">Cards Against Humanity Card Maker</h2>
-      <a id="byLine" href="/">Tyler Gordon Hill</a>
+      <a id="byLine" class="button large ripple" href="/">Tyler Gordon Hill</a>
     </header>
 
     <main>
@@ -63,7 +63,9 @@
               alt="White Back"
             />
           </div>
-          <a href="/cah-maker/images/white-back.svg" download="" class="button large">Download</a>
+          <a href="/cah-maker/images/white-back.svg" download="" class="button large ripple"
+            >Download</a
+          >
         </div>
         <div>
           <div class="card black">
@@ -74,7 +76,9 @@
               alt="Black Back"
             />
           </div>
-          <a href="/cah-maker/images/black-back.svg" download="" class="button large">Download</a>
+          <a href="/cah-maker/images/black-back.svg" download="" class="button large ripple"
+            >Download</a
+          >
         </div>
         <div id="white-front">
           <div class="card"></div>
@@ -85,7 +89,7 @@
               placeholder="Line 1"
               class="medium text-input"
             />
-            <button class="medium addLine">Add Line</button>
+            <button class="medium ripple addLine">Add Line</button>
           </div>
           <details>
             <summary>More</summary>
@@ -117,7 +121,7 @@
           <a
             href="/cah-maker/images/white-front.svg"
             download="white-front (Laced church wine).svg"
-            class="button large"
+            class="button large ripple"
             >Download</a
           >
         </div>
@@ -160,7 +164,7 @@
               placeholder="Line 6"
               class="medium text-input"
             />
-            <button class="medium addLine">Add Line</button>
+            <button class="medium ripple addLine">Add Line</button>
           </div>
           <details>
             <summary>More</summary>
@@ -192,7 +196,7 @@
           <a
             href="/cah-maker/images/black-front.svg"
             download="black-front (The year is 2050,).svg"
-            class="button large"
+            class="button large ripple"
             >Download</a
           >
         </div>
@@ -201,7 +205,7 @@
       <div id="icon-input-container">
         <label for="icon-input"><h3>Card Pack Icon</h3></label>
         <input type="file" id="icon-input" accept="image/svg+xml" />
-        <a href="/cah-maker/images/icon.svg" download="" class="button small"
+        <a href="/cah-maker/images/icon.svg" download="" class="button small ripple"
           >Download example icon</a
         >
       </div>
@@ -291,7 +295,7 @@
         <a href="/legal/privacy-policy">Privacy Policy</a>
         <a href="/sitemap.xml">Sitemap</a>
       </div>
-      <button id="footer-theme" class="large circle">
+      <button id="footer-theme" class="large circle ripple">
         <img class="svg" src="/style-guide/footer/theme.svg" alt="Theme icon" />
       </button>
     </footer>
@@ -325,6 +329,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics-compat.js"></script>
     <script src="/style-guide/script.js"></script>
+    <script src="/style-guide/inputs/script.js"></script>
     <script src="/style-guide/modal/script.js"></script>
     <script src="/style-guide/footer/script.js"></script>
     <script src="/style-guide/toast/script.js"></script>
